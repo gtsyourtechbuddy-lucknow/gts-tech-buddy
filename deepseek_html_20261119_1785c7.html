@@ -1,0 +1,739 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#050505">
+  <meta name="description" content="GTS Your Tech Buddy makes websites, improves SEO, and shares practical tech tutorials and free tools. Tech seekhna ab easy hai!">
+  <meta property="og:title" content="GTS Your Tech Buddy | Tech Seekhna Ab Easy Hai!">
+  <meta property="og:description" content="Websites, SEO, free tools and practical tech tutorials.">
+  <meta property="og:type" content="website">
+  <title>GTS Your Tech Buddy — Tech Seekhna Ab Easy Hai!</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{--bg:#050505;--section:#0a0a0a;--card:#111;--green:#a6ff00;--lime:#bfff00;--blue:#00e5ff;--white:#f5f5ed;--body:#d1d1d1;--muted:#8c9292;--line:#242727;--radius:16px;--shadow:0 0 22px #a6ff0025;--chat-bg:#0c100d;--chat-user:#1c2a1c;--chat-bot:#131b15}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth;scroll-padding-top:88px}
+    body{margin:0;background:var(--bg);color:var(--body);font:400 16px/1.65 Inter,system-ui,sans-serif}
+    a{color:var(--blue);text-decoration:none}
+    a:hover{color:var(--green)}
+    img{max-width:100%;display:block}
+    button,input,textarea{font:inherit}
+    button{cursor:pointer}
+    .wrap{width:min(1140px,calc(100% - 40px));margin:auto}
+    .section{padding:88px 0}
+    .section.alt{background:var(--section)}
+    .eyebrow{color:var(--green);font-size:.78rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase}
+    .section-title{font:700 clamp(2rem,4vw,3.1rem)/1.12 "Space Grotesk",sans-serif;color:var(--white);margin:10px 0 14px}
+    .section-lead{max-width:650px;color:#aeb4b4;margin:0 0 36px}
+    .center{text-align:center}
+    .center .section-lead{margin-left:auto;margin-right:auto}
+    h1,h2,h3,h4{font-family:"Space Grotesk",sans-serif;color:var(--white);line-height:1.15}
+    h1{font-size:clamp(2.8rem,6.6vw,5.4rem);letter-spacing:-.055em;margin:16px 0}
+    h1 span{color:var(--green);text-shadow:0 0 28px #a6ff0038}
+    h3{font-size:1.25rem}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:13px 20px;border:1px solid var(--green);border-radius:12px;background:var(--green);color:#050505;font-weight:800;box-shadow:0 0 20px #a6ff003b;transition:.2s}
+    .btn:hover{transform:translateY(-2px);background:var(--lime);color:#050505;box-shadow:0 0 28px #a6ff0066}
+    .btn.ghost{background:transparent;color:var(--white);border-color:#3c4949;box-shadow:none}
+    .btn.ghost:hover{border-color:var(--blue);color:var(--blue);box-shadow:0 0 20px #00e5ff20}
+    .btn.small{padding:10px 15px;font-size:.9rem}
+    .btn.blue{border-color:var(--blue);background:var(--blue);color:#050505;box-shadow:0 0 20px #00e5ff3b}
+    .btn.blue:hover{background:#33ebff;box-shadow:0 0 28px #00e5ff66}
+
+    /* Header / App bar */
+    .site-header{position:sticky;top:0;z-index:50;background:#050505ed;border-bottom:1px solid #1b2020;backdrop-filter:blur(16px)}
+    .nav{height:86px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+    .brand img{width:224px;height:auto}
+    .nav-links{display:flex;align-items:center;gap:24px}
+    .nav-links a{font-size:.9rem;color:#e1e5df;font-weight:600}
+    .nav-links a:hover{color:var(--green)}
+    .menu-toggle{display:none;background:none;color:var(--white);border:1px solid var(--line);border-radius:10px;padding:9px}
+    .app-badge{display:inline-flex;align-items:center;gap:6px;background:#1a2217;border:1px solid #2e3d29;border-radius:20px;padding:5px 12px;font-size:.7rem;font-weight:700;color:var(--green);letter-spacing:.08em;text-transform:uppercase}
+    .app-badge .dot{width:6px;height:6px;border-radius:50%;background:var(--green);animation:pulse 2s infinite}
+    @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(1.3)}}
+
+    /* Hero */
+    .hero{position:relative;overflow:hidden;padding:88px 0 66px;background:radial-gradient(ellipse at 76% 38%,#12302750,transparent 36%),linear-gradient(180deg,#050505,#080b09)}
+    .hero:before{content:"";position:absolute;inset:0;background-image:radial-gradient(#a6ff002b 1px,transparent 1px);background-size:34px 34px;mask-image:linear-gradient(90deg,transparent,#000)}
+    .hero-grid{position:relative;display:grid;grid-template-columns:1.15fr .85fr;align-items:center;gap:42px}
+    .hero-copy p{font-size:1.12rem;max-width:590px;color:#c2c9c4}
+    .hero-actions{display:flex;gap:13px;flex-wrap:wrap;margin:28px 0}
+    .handle{font:600 1.7rem Caveat,cursive;color:var(--white)}
+    .network-art{width:min(100%,390px);margin:auto;filter:drop-shadow(0 0 22px #a6ff0040);animation:float 5s ease-in-out infinite}
+    .score-strip{display:flex;gap:15px;flex-wrap:wrap;margin-top:34px}
+    .score{width:68px;height:68px;border:2px solid var(--green);border-radius:50%;display:grid;place-items:center;color:var(--green);font:700 1.12rem "Space Grotesk";box-shadow:inset 0 0 15px #a6ff0015,0 0 15px #a6ff0020}
+    .score small{display:block;font:500 .52rem Inter;color:#aab2a7;text-align:center;margin-top:-18px}
+    @keyframes float{50%{transform:translateY(-12px)}}
+    .trust{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:20px 0;background:#090b09}
+    .trust-row{display:flex;justify-content:center;gap:38px;flex-wrap:wrap;color:#b9c1b8;font-size:.9rem}
+    .trust strong{color:var(--green)}
+
+    /* Cards */
+    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .card{background:linear-gradient(145deg,#141717,#0d0f0f);border:1px solid #252b2b;border-radius:var(--radius);padding:25px;transition:.25s;min-width:0}
+    .card:hover{transform:translateY(-5px);border-color:#00e5ff80;box-shadow:0 0 24px #00e5ff18}
+    .iconbox{width:48px;height:48px;border:1px solid #a6ff0055;background:#a6ff0010;color:var(--green);border-radius:13px;display:grid;place-items:center;margin-bottom:18px}
+    .iconbox svg{width:25px;height:25px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+    .card p{color:#aeb5b3;margin-bottom:0}
+    .card .text-link{display:inline-block;margin-top:18px;font-weight:700}
+
+    /* Carousel */
+    .carousel{position:relative;overflow:hidden;border:1px solid #28302d;border-radius:22px;background:radial-gradient(circle at 80% 30%,#a6ff0019,transparent 35%),#101312;min-height:270px}
+    .slides{display:flex;transition:transform .55s cubic-bezier(.2,.8,.2,1)}
+    .slide{flex:0 0 100%;padding:40px clamp(24px,6vw,68px);display:flex;align-items:center;justify-content:space-between;gap:25px;min-height:270px}
+    .slide h3{font-size:clamp(1.6rem,3vw,2.5rem);margin:0 0 10px}
+    .slide p{max-width:500px;color:#b5bfba}
+    .slide-mark{font:700 clamp(3rem,8vw,6rem) "Space Grotesk";color:#a6ff001d;line-height:1}
+    .carousel-controls{position:absolute;right:20px;bottom:17px;display:flex;gap:8px}
+    .carousel-controls button{width:34px;height:34px;border-radius:50%;border:1px solid #59635c;background:#111;color:var(--white)}
+    .dots{position:absolute;left:28px;bottom:28px;display:flex;gap:7px}
+    .dots button{width:7px;height:7px;padding:0;border:0;border-radius:10px;background:#58605a}
+    .dots button.active{width:22px;background:var(--green)}
+
+    /* Tool grid */
+    .tool-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+    .tool-card{padding:21px}
+    .tool-card h3{font-size:1.05rem}
+    .tool-card .btn{margin-top:15px}
+
+    /* Video grid */
+    .video-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+    .video{aspect-ratio:9/16;border-radius:16px;border:1px solid #26302c;background:radial-gradient(circle at 50% 35%,#a6ff0022,transparent 40%),linear-gradient(145deg,#151a17,#080a09);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+    .video:after{content:"SHORTS";position:absolute;bottom:15px;letter-spacing:.2em;font-size:.7rem;color:#8b968c}
+    .play{width:58px;height:58px;border-radius:50%;display:grid;place-items:center;background:#a6ff00;color:#050505;box-shadow:0 0 30px #a6ff0044}
+    .video-note{font-size:.85rem;color:#aeb5b3;margin-top:10px}
+
+    /* Pricing */
+    .pricing{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;align-items:stretch}
+    .price-card{position:relative}
+    .price-card.featured{border-color:var(--green);box-shadow:0 0 28px #a6ff0020;transform:translateY(-8px)}
+    .popular{position:absolute;right:18px;top:18px;color:#050505;background:var(--green);font-size:.7rem;font-weight:800;padding:5px 9px;border-radius:30px}
+    .price{font:700 2.5rem "Space Grotesk";color:var(--white);margin:18px 0}
+    .price span{font:400 .85rem Inter;color:#9ca59e}
+    .checklist{list-style:none;padding:0;margin:22px 0;color:#c4cbc4}
+    .checklist li{padding:7px 0}
+    .checklist li:before{content:"✓";color:var(--green);font-weight:800;margin-right:10px}
+
+    /* Quote / testimonial */
+    .quote{font-size:2rem;color:var(--green);line-height:1}
+    .stars{color:var(--green);letter-spacing:3px}
+    .person{display:flex;align-items:center;gap:12px;margin-top:20px}
+    .avatar{width:42px;height:42px;border-radius:50%;background:#1c2a20;display:grid;place-items:center;color:var(--green);font-weight:800}
+
+    /* Newsletter */
+    .newsletter{background:radial-gradient(ellipse at 50% 0%,#a6ff0015,transparent 60%),#0d100e;border:1px solid #28302a;border-radius:22px;padding:42px;text-align:center}
+    .newsletter-form{display:flex;max-width:510px;margin:25px auto 0;gap:10px}
+    .field{width:100%;background:#080a09;border:1px solid #343d38;border-radius:12px;padding:14px 15px;color:var(--white);outline:none}
+    .field:focus{border-color:var(--green);box-shadow:0 0 0 3px #a6ff001c}
+    .status{font-size:.88rem;color:var(--green);min-height:1.5em;margin-top:10px}
+
+    /* About */
+    .about-grid{display:grid;grid-template-columns:.7fr 1.3fr;gap:45px;align-items:center}
+    .founder-art{max-width:270px;margin:auto;filter:drop-shadow(0 0 20px #a6ff0020)}
+
+    /* Contact */
+    .contact-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:24px}
+    .contact-form{display:grid;gap:13px}
+    .contact-form textarea{min-height:130px;resize:vertical}
+
+    /* Footer */
+    .footer{padding:45px 0 25px;border-top:1px solid var(--line);background:#030403}
+    .footer-top{display:flex;justify-content:space-between;gap:30px;align-items:center}
+    .footer-logo{width:190px}
+    .socials{display:flex;gap:12px}
+    .socials a{width:40px;height:40px;border:1px solid #303a34;border-radius:12px;display:grid;place-items:center;color:var(--green)}
+    .socials svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.8}
+    .copyright{border-top:1px solid #202522;margin-top:30px;padding-top:20px;color:#737d75;font-size:.8rem;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+
+    /* Modal (tools) */
+    .modal{position:fixed;inset:0;background:#000c;display:none;place-items:center;z-index:100;padding:20px}
+    .modal.open{display:grid}
+    .modal-box{width:min(520px,100%);background:#111;border:1px solid #38433b;border-radius:18px;padding:26px;position:relative}
+    .close{position:absolute;right:15px;top:12px;background:none;border:0;color:white;font-size:1.5rem}
+    .result{background:#080b09;border:1px solid #29332c;border-radius:12px;padding:14px;margin-top:14px;white-space:pre-wrap;overflow-wrap:anywhere;color:var(--green)}
+
+    /* ===== CHATBOT APP SECTION ===== */
+    .chat-app-section{background:radial-gradient(ellipse at 20% 20%,#0a1f12,transparent 50%),linear-gradient(180deg,#080b09,#050505);border-top:1px solid #1a2a1e;border-bottom:1px solid #1a2a1e;padding:70px 0}
+    .chat-app-grid{display:grid;grid-template-columns:1fr 1.3fr;gap:40px;align-items:start}
+    .chat-features{display:grid;gap:14px}
+    .chat-feature{display:flex;gap:14px;align-items:flex-start;padding:14px 0;border-bottom:1px solid #1a241c}
+    .chat-feature:last-child{border-bottom:0}
+    .chat-feature-icon{width:38px;height:38px;flex-shrink:0;border-radius:10px;display:grid;place-items:center;background:#1a2a1c;border:1px solid #2e4a30;color:var(--green)}
+    .chat-feature-icon svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:1.8}
+    .chat-feature h4{font-size:.95rem;margin:0 0 4px;color:var(--white)}
+    .chat-feature p{font-size:.85rem;margin:0;color:#95a099}
+
+    /* Chat window */
+    .chat-window{background:var(--chat-bg);border:1px solid #263a2a;border-radius:22px;overflow:hidden;box-shadow:0 0 60px #a6ff0010,inset 0 0 40px #a6ff0008}
+    .chat-header{padding:16px 20px;border-bottom:1px solid #1e3022;display:flex;align-items:center;gap:12px;background:#0e1510}
+    .chat-avatar{width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,#a6ff00,#00e5ff);display:grid;place-items:center;font-weight:800;font-size:.85rem;color:#050505;flex-shrink:0}
+    .chat-header-info h4{margin:0;font-size:.92rem;color:var(--white);line-height:1.2}
+    .chat-header-info span{font-size:.72rem;color:#7a8c7e;display:flex;align-items:center;gap:4px}
+    .online-dot{width:6px;height:6px;border-radius:50%;background:#a6ff00;display:inline-block}
+    .chat-messages{padding:18px;height:340px;overflow-y:auto;display:flex;flex-direction:column;gap:12px;scroll-behavior:smooth}
+    .chat-messages::-webkit-scrollbar{width:4px}
+    .chat-messages::-webkit-scrollbar-thumb{background:#2a3e2e;border-radius:10px}
+    .msg{max-width:85%;padding:10px 14px;border-radius:14px;font-size:.88rem;line-height:1.5;animation:msgIn .3s ease}
+    @keyframes msgIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+    .msg.bot{background:var(--chat-bot);border:1px solid #1e3022;align-self:flex-start;border-bottom-left-radius:4px;color:#d8e8da}
+    .msg.user{background:var(--chat-user);border:1px solid #2a4a2e;align-self:flex-end;border-bottom-right-radius:4px;color:#e8f5e8}
+    .msg .msg-label{font-size:.62rem;text-transform:uppercase;letter-spacing:.1em;font-weight:700;color:#6f8a73;margin-bottom:3px}
+    .msg.user .msg-label{color:#8aad8f;text-align:right}
+    .typing-indicator{display:flex;gap:4px;padding:12px 14px;align-self:flex-start;background:var(--chat-bot);border:1px solid #1e3022;border-radius:14px;border-bottom-left-radius:4px}
+    .typing-indicator span{width:6px;height:6px;border-radius:50%;background:#5a7a5e;animation:typingBounce 1.4s infinite}
+    .typing-indicator span:nth-child(2){animation-delay:.2s}
+    .typing-indicator span:nth-child(3){animation-delay:.4s}
+    @keyframes typingBounce{0%,60%,100%{transform:translateY(0);opacity:.5}30%{transform:translateY(-5px);opacity:1}}
+    .chat-quick-actions{padding:0 18px 10px;display:flex;gap:8px;flex-wrap:wrap}
+    .quick-chip{background:#142016;border:1px solid #2a4a2e;color:#a6d4aa;font-size:.75rem;padding:6px 12px;border-radius:20px;transition:.2s;cursor:pointer}
+    .quick-chip:hover{background:#1e3022;border-color:#a6ff00;color:var(--green)}
+    .chat-input-area{padding:12px 16px 16px;border-top:1px solid #1e3022;display:flex;gap:10px;align-items:flex-end;background:#0a0f0b}
+    .chat-input-area textarea{flex:1;background:#0d1510;border:1px solid #2a3e2e;border-radius:12px;padding:11px 14px;color:var(--white);resize:none;outline:none;font-size:.88rem;min-height:44px;max-height:100px;line-height:1.4}
+    .chat-input-area textarea:focus{border-color:#4a7a50}
+    .chat-send{width:44px;height:44px;flex-shrink:0;border-radius:12px;border:none;background:var(--green);color:#050505;display:grid;place-items:center;transition:.2s;box-shadow:0 0 16px #a6ff0040}
+    .chat-send:hover{background:var(--lime);box-shadow:0 0 24px #a6ff0066;transform:scale(1.05)}
+    .chat-send:active{transform:scale(.95)}
+    .chat-send svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+
+    /* Floating chat bubble (mobile) */
+    .chat-fab{position:fixed;bottom:24px;right:24px;z-index:90;width:58px;height:58px;border-radius:50%;background:var(--green);border:none;color:#050505;display:grid;place-items:center;box-shadow:0 4px 30px #a6ff0055;transition:.25s;display:none}
+    .chat-fab:hover{transform:scale(1.08);box-shadow:0 4px 40px #a6ff0088}
+    .chat-fab svg{width:26px;height:26px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+    .chat-fab .fab-badge{position:absolute;top:-2px;right:-2px;width:16px;height:16px;border-radius:50%;background:#ff3b3b;border:2px solid #050505;font-size:.55rem;font-weight:800;color:#fff;display:grid;place-items:center}
+
+    /* App nav tabs (mobile app feel) */
+    .app-nav{position:fixed;bottom:0;left:0;right:0;z-index:80;background:#080c09f5;border-top:1px solid #1e3022;backdrop-filter:blur(16px);display:none;padding:6px 0 env(safe-area-inset-bottom,6px)}
+    .app-nav-inner{display:flex;justify-content:space-around;align-items:center;max-width:500px;margin:auto}
+    .app-nav a{display:flex;flex-direction:column;align-items:center;gap:2px;font-size:.6rem;font-weight:600;color:#6b7a6e;padding:6px 12px;border-radius:10px;transition:.2s}
+    .app-nav a.active{color:var(--green)}
+    .app-nav a svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+
+    /* Responsive */
+    @media(max-width:900px){
+      .nav-links{gap:14px}.nav-links a{font-size:.82rem}.brand img{width:185px}
+      .hero-grid{grid-template-columns:1fr .75fr}
+      .tool-grid{grid-template-columns:repeat(2,1fr)}
+      .video-grid{grid-template-columns:repeat(4,1fr)}
+      .chat-app-grid{grid-template-columns:1fr}
+    }
+    @media(max-width:700px){
+      .section{padding:66px 0}
+      .nav{height:74px}.brand img{width:175px}
+      .menu-toggle{display:block}
+      .nav-links{display:none;position:absolute;top:74px;left:0;right:0;background:#080a09;border-bottom:1px solid var(--line);padding:18px 22px 24px;flex-direction:column;align-items:stretch}
+      .nav-links.open{display:flex}
+      .nav-links a{font-size:1rem;padding:8px}
+      .nav-links .btn{margin-top:6px}
+      .hero{padding:64px 0 48px}
+      .hero-grid{grid-template-columns:1fr}
+      .network-art{width:230px;grid-row:1}
+      .hero-copy{text-align:center}
+      .hero-copy p{margin:auto}
+      .hero-actions,.score-strip{justify-content:center}
+      .cards,.pricing{grid-template-columns:1fr}
+      .price-card.featured{transform:none}
+      .video-grid{grid-template-columns:repeat(2,1fr)}
+      .video{aspect-ratio:4/5}
+      .about-grid,.contact-grid{grid-template-columns:1fr}
+      .founder-art{max-width:190px}
+      .footer-top{align-items:flex-start;flex-direction:column}
+      .newsletter{padding:30px 18px}
+      .newsletter-form{flex-direction:column}
+      .slide{min-height:300px;align-items:flex-start;flex-direction:column;justify-content:center}
+      .slide-mark{display:none}
+      .dots{bottom:17px}
+      .carousel-controls{bottom:10px}
+      .trust-row{gap:12px 22px}
+      .chat-fab{display:grid}
+      .app-nav{display:block}
+      .chat-app-section{padding:50px 0 80px}
+      .chat-messages{height:280px}
+      body{padding-bottom:64px}
+    }
+    @media(prefers-reduced-motion:reduce){
+      *,*:before,*:after{scroll-behavior:auto!important;animation:none!important;transition:none!important}
+    }
+  </style>
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap nav">
+    <a class="brand" href="#home" aria-label="GTS Your Tech Buddy home"><img src="assets/logo-gts.jpg" width="526" height="200" alt="GTS — YourTechBuddy"></a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Open navigation" aria-expanded="false"><svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>
+    <nav class="nav-links" id="navLinks" aria-label="Main navigation">
+      <a href="#home">Home</a>
+      <a href="#chat-app">Chat App</a>
+      <a href="#tools">Tools</a>
+      <a href="#blog">Blog</a>
+      <a href="#services">Services</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+      <a class="btn small blue" href="#chat-app">💬 Chat Now</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <div class="app-badge"><span class="dot"></span> Web App + AI Chatbot</div>
+      <div class="eyebrow" style="margin-top:14px">Your friendly digital growth partner</div>
+      <h1>Tech Seekhna<br><span>Ab Easy Hai!</span></h1>
+      <p>Websites, SEO, useful tools aur simple tech tutorials — digital duniya mein aage badhne ke liye jo chahiye, ek hi jagah. Ab AI chat buddy ke saath!</p>
+      <div class="hero-actions">
+        <a class="btn" href="#services">Apni Website Banwao <span>↗</span></a>
+        <a class="btn blue" href="#chat-app">💬 Try AI Chat</a>
+        <a class="btn ghost" href="#tools">Explore Free Tools</a>
+      </div>
+      <div class="handle">@GTSYourTechBuddy</div>
+      <div class="score-strip" aria-label="Illustrative performance targets"><div class="score">93<small>PERF.</small></div><div class="score">94<small>ACCESS.</small></div><div class="score">100<small>BEST PR.</small></div><div class="score">100<small>SEO</small></div></div>
+      <p style="font-size:.72rem;color:#778078;margin-top:8px">Design targets / sample scores — verify with a live Lighthouse audit.</p>
+    </div>
+    <div aria-hidden="true">
+      <svg class="network-art" viewBox="0 0 360 360" role="img">
+        <defs><radialGradient id="orb"><stop stop-color="#a6ff00" stop-opacity=".16"/><stop offset="1" stop-color="#00e5ff" stop-opacity="0"/></radialGradient><filter id="glow"><feGaussianBlur stdDeviation="3" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
+        <circle cx="180" cy="180" r="165" fill="url(#orb)"/>
+        <g stroke="#a6ff00" stroke-width="2.5" opacity=".8" fill="none"><path d="M84 74 151 48 236 82 280 135 236 205 168 279 94 251 48 177 84 74 168 279 236 82 94 251 280 135 84 74 236 205 48 177 151 48 168 279"/><path d="M84 74 48 177 94 251 168 279 236 205 280 135 236 82 151 48Z"/></g>
+        <g fill="#bfff00" filter="url(#glow)"><circle cx="84" cy="74" r="7"/><circle cx="151" cy="48" r="8"/><circle cx="236" cy="82" r="7"/><circle cx="280" cy="135" r="8"/><circle cx="236" cy="205" r="7"/><circle cx="168" cy="279" r="9"/><circle cx="94" cy="251" r="7"/><circle cx="48" cy="177" r="8"/><circle cx="180" cy="164" r="7"/></g>
+        <text x="180" y="207" text-anchor="middle" font-family="Space Grotesk,sans-serif" font-weight="700" font-size="118" fill="#a6ff00" opacity=".12">G</text>
+      </svg>
+    </div>
+  </div>
+</section>
+<div class="trust"><div class="wrap trust-row"><span><strong>01</strong> Website Design</span><span><strong>02</strong> SEO Growth</span><span><strong>03</strong> AI Chatbot</span><span><strong>04</strong> Free Digital Tools</span></div></div>
+
+<!-- ===== CHATBOT APP SECTION ===== -->
+<section class="chat-app-section" id="chat-app">
+  <div class="wrap">
+    <div class="center" style="margin-bottom:36px">
+      <div class="app-badge" style="margin-bottom:10px"><span class="dot"></span> Live AI Assistant</div>
+      <h2 class="section-title">Apna AI Tech Buddy</h2>
+      <p class="section-lead" style="margin:auto">Website, SEO, tools ya tech ke kisi bhi sawaal ka jawab — seedha chat mein. Fast, friendly, aur bilkul free.</p>
+    </div>
+    <div class="chat-app-grid">
+      <!-- Features sidebar -->
+      <div class="chat-features">
+        <div class="chat-feature">
+          <div class="chat-feature-icon"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+          <div><h4>Instant answers</h4><p>Tech sawaalon ke turant jawab, 24/7 available.</p></div>
+        </div>
+        <div class="chat-feature">
+          <div class="chat-feature-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg></div>
+          <div><h4>Website & SEO help</h4><p>Domain, hosting, meta tags, speed tips — sab kuch.</p></div>
+        </div>
+        <div class="chat-feature">
+          <div class="chat-feature-icon"><svg viewBox="0 0 24 24"><path d="m12 3 2.3 5.7L20 11l-5.7 2.3L12 19l-2.3-5.7L4 11l5.7-2.3L12 3Z"/></svg></div>
+          <div><h4>Tool recommendations</h4><p>Kaunsa free tool kab use karein — clear guidance.</p></div>
+        </div>
+        <div class="chat-feature">
+          <div class="chat-feature-icon"><svg viewBox="0 0 24 24"><path d="M12 20V10M18 20V4M6 20v-4"/></svg></div>
+          <div><h4>Growth guidance</h4><p>Step-by-step roadmap for your digital journey.</p></div>
+        </div>
+        <div style="margin-top:12px">
+          <a class="btn small ghost" href="#contact" style="width:100%">Talk to human ↗</a>
+        </div>
+      </div>
+
+      <!-- Chat window -->
+      <div class="chat-window" id="chatWindow">
+        <div class="chat-header">
+          <div class="chat-avatar">GTS</div>
+          <div class="chat-header-info">
+            <h4>GTS AI Buddy</h4>
+            <span><span class="online-dot"></span> Online · replies instantly</span>
+          </div>
+        </div>
+        <div class="chat-messages" id="chatMessages" aria-live="polite">
+          <div class="msg bot">
+            <div class="msg-label">GTS AI</div>
+            Namaste! 👋 Main hoon aapka GTS AI Tech Buddy. Website, SEO, free tools ya kisi bhi tech topic par poochhiye — main help karunga!
+          </div>
+        </div>
+        <div class="chat-quick-actions" id="quickActions">
+          <button class="quick-chip" data-quick="website">Website banwani hai</button>
+          <button class="quick-chip" data-quick="seo">SEO kaise improve karun?</button>
+          <button class="quick-chip" data-quick="tools">Free tools batao</button>
+          <button class="quick-chip" data-quick="pricing">Pricing kya hai?</button>
+        </div>
+        <div class="chat-input-area">
+          <textarea id="chatInput" rows="1" placeholder="Apna sawaal likhiye..." aria-label="Type your message"></textarea>
+          <button class="chat-send" id="chatSend" aria-label="Send message">
+            <svg viewBox="0 0 24 24"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT WE DO -->
+<section class="section"><div class="wrap">
+  <div class="center"><div class="eyebrow">What we do</div><h2 class="section-title">Tech ko simple banate hain</h2><p class="section-lead">Aapke idea ko online presence mein badalne se lekar search visibility aur learning tak — practical support, without the jargon.</p></div>
+  <div class="cards">
+    <article class="card"><div class="iconbox"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M8 22h8M12 18v4M7 8h10M7 12h6"/></svg></div><h3>Website Development</h3><p>Responsive, clean aur fast websites jo aapke brand ko professional online identity dein.</p><a class="text-link" href="#services">Explore service →</a></article>
+    <article class="card"><div class="iconbox"><svg viewBox="0 0 24 24"><path d="M3 3v18h18M7 14l4-4 3 3 6-7"/><path d="M16 6h4v4"/></svg></div><h3>SEO & Performance</h3><p>Technical basics, on-page improvements aur speed-first thinking se better discoverability.</p><a class="text-link" href="#services">Explore service →</a></article>
+    <article class="card"><div class="iconbox"><svg viewBox="0 0 24 24"><path d="m12 3 2.3 5.7L20 11l-5.7 2.3L12 19l-2.3-5.7L4 11l5.7-2.3L12 3Z"/><path d="m19 14 1.2 2.8L23 18l-2.8 1.2L19 22l-1.2-2.8L15 18l2.8-1.2L19 14Z"/></svg></div><h3>AI Chat Assistant</h3><p>Instant tech guidance, 24/7 — aapka personal AI buddy for all digital queries.</p><a class="text-link" href="#chat-app">Try it now →</a></article>
+  </div>
+</div></section>
+
+<!-- FEATURED CAROUSEL -->
+<section class="section alt"><div class="wrap"><div class="eyebrow">Featured updates</div><h2 class="section-title">Aapka next digital step</h2><div class="carousel" aria-roledescription="carousel">
+  <div class="slides" id="slides">
+    <article class="slide"><div><div class="eyebrow">01 / Website</div><h3>Website Banwao</h3><p>Apne business, portfolio ya idea ke liye ek modern website launch karein.</p><a class="btn small" href="#services">Get started ↗</a></div><div class="slide-mark">WEB</div></article>
+    <article class="slide"><div><div class="eyebrow">02 / AI Chat</div><h3>AI se poochho</h3><p>Koi bhi tech sawaal — instant jawab. Hamara AI buddy 24/7 ready hai.</p><a class="btn small blue" href="#chat-app">Chat now ↗</a></div><div class="slide-mark">AI</div></article>
+    <article class="slide"><div><div class="eyebrow">03 / Free resources</div><h3>Smart tools. Zero cost.</h3><p>Daily digital tasks ko easy banane ke liye handy free tools try karein.</p><a class="btn small" href="#tools">Try free tools ↗</a></div><div class="slide-mark">FREE</div></article>
+  </div>
+  <div class="dots" id="dots"><button class="active" aria-label="Slide 1"></button><button aria-label="Slide 2"></button><button aria-label="Slide 3"></button></div>
+  <div class="carousel-controls"><button id="prev" aria-label="Previous slide">‹</button><button id="next" aria-label="Next slide">›</button></div>
+</div></div></section>
+
+<!-- VIDEOS -->
+<section class="section" id="videos"><div class="wrap"><div class="eyebrow">Watch & learn</div><h2 class="section-title">Latest videos</h2><p class="section-lead">Short-form learning slots. Add your published YouTube Shorts links and thumbnails here.</p>
+  <div class="video-grid">
+    <div><a class="video" href="https://www.youtube.com/@GTSYourTechBuddy/shorts" target="_blank" rel="noopener" aria-label="Open GTS YouTube Shorts"><span class="play">▶</span></a><div class="video-note">Website tips · YouTube Shorts</div></div>
+    <div><a class="video" href="https://www.youtube.com/@GTSYourTechBuddy/shorts" target="_blank" rel="noopener" aria-label="Open GTS YouTube Shorts"><span class="play">▶</span></a><div class="video-note">SEO basics · YouTube Shorts</div></div>
+    <div><a class="video" href="https://www.youtube.com/@GTSYourTechBuddy/shorts" target="_blank" rel="noopener" aria-label="Open GTS YouTube Shorts"><span class="play">▶</span></a><div class="video-note">Free tools · YouTube Shorts</div></div>
+    <div><a class="video" href="https://www.youtube.com/@GTSYourTechBuddy/shorts" target="_blank" rel="noopener" aria-label="Open GTS YouTube Shorts"><span class="play">▶</span></a><div class="video-note">Tech tutorials · YouTube Shorts</div></div>
+  </div>
+</div></section>
+
+<!-- TOOLS -->
+<section class="section alt" id="tools"><div class="wrap"><div class="eyebrow">Free resources</div><h2 class="section-title">Free tools</h2><p class="section-lead">Simple browser-based helpers. Your text stays in this browser; nothing is uploaded.</p>
+  <div class="tool-grid">
+    <article class="card tool-card"><div class="iconbox"><svg viewBox="0 0 24 24"><path d="M4 5h16M4 10h10M4 15h16M4 20h10"/></svg></div><h3>Word Counter</h3><p>Words, characters aur reading time count karein.</p><button class="btn small" data-tool="words">Open tool</button></article>
+    <article class="card tool-card"><div class="iconbox"><svg viewBox="0 0 24 24"><path d="M4 4h16v16H4z"/><path d="M8 8h8M8 12h5M8 16h8"/></svg></div><h3>Case Converter</h3><p>Text ko uppercase, lowercase ya title case mein badlein.</p><button class="btn small" data-tool="case">Open tool</button></article>
+    <article class="card tool-card"><div class="iconbox"><svg viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/><circle cx="8" cy="6" r="2"/><circle cx="15" cy="12" r="2"/><circle cx="10" cy="18" r="2"/></svg></div><h3>Meta Tag Helper</h3><p>SEO title aur description ka quick draft banayein.</p><button class="btn small" data-tool="meta">Open tool</button></article>
+    <article class="card tool-card"><div class="iconbox"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div><h3>Reading Time</h3><p>Article padhne ka estimated time check karein.</p><button class="btn small" data-tool="reading">Open tool</button></article>
+  </div>
+</div></section>
+
+<!-- BLOG -->
+<section class="section" id="blog"><div class="wrap"><div class="eyebrow">From the blog</div><h2 class="section-title">Latest tech tips</h2><p class="section-lead">Starter topics for the GTS blog. Replace these drafts with your published articles.</p>
+  <div class="cards">
+    <article class="card"><div class="iconbox"><svg viewBox="0 0 24 24"><path d="M3 5h18v14H3zM3 9h18M8 5v4"/></svg></div><div class="eyebrow">Website basics</div><h3>Business website banane se pehle 5 baatein</h3><p>Domain, hosting, content aur mobile experience ki simple checklist.</p><a class="text-link" href="#contact">Discuss your website →</a></article>
+    <article class="card"><div class="iconbox"><svg viewBox="0 0 24 24"><path d="M4 20V4h16v16zM8 16l3-4 2 2 3-5"/></svg></div><div class="eyebrow">SEO guide</div><h3>SEO-friendly page kaise banayein</h3><p>Title, headings, helpful content aur image alt text ke practical basics.</p><a class="text-link" href="#contact">Ask about SEO →</a></article>
+    <article class="card"><div class="iconbox"><svg viewBox="0 0 24 24"><path d="M12 3v18M3 12h18M5.6 5.6l12.8 12.8M18.4 5.6 5.6 18.4"/></svg></div><div class="eyebrow">AI & Productivity</div><h3>AI chatbot se daily work kaise easy karein</h3><p>Apne tech sawaalon ke instant jawab paayein, bina waiting.</p><a class="text-link" href="#chat-app">Try AI chat →</a></article>
+  </div>
+</div></section>
+
+<!-- SERVICES -->
+<section class="section alt" id="services"><div class="wrap"><div class="center"><div class="eyebrow">Simple transparent packages</div><h2 class="section-title">Apni website banwao</h2><p class="section-lead">Starting package prices. Final scope, pages, integrations and delivery timeline are confirmed after a discussion.</p></div>
+  <div class="pricing">
+    <article class="card price-card"><h3>Basic</h3><p>For a clean online starting point.</p><div class="price">₹4,999</div><ul class="checklist"><li>Starter responsive website</li><li>Up to 3 pages</li><li>Contact section</li><li>Basic on-page SEO setup</li></ul><a class="btn ghost" href="#contact">Choose Basic</a></article>
+    <article class="card price-card featured"><span class="popular">POPULAR</span><h3>Business</h3><p>For growing brands and services.</p><div class="price">₹9,999</div><ul class="checklist"><li>Custom responsive design</li><li>Up to 5 pages</li><li>Lead/contact form UI</li><li>On-page SEO foundation</li><li>Speed optimization pass</li><li>AI chatbot integration</li></ul><a class="btn" href="#contact">Choose Business</a></article>
+    <article class="card price-card"><h3>Premium</h3><p>For a more complete web presence.</p><div class="price">₹14,999</div><ul class="checklist"><li>Advanced custom design</li><li>Up to 8 pages</li><li>Blog / content section</li><li>SEO & performance setup</li><li>AI chatbot + automation</li><li>Priority support period</li></ul><a class="btn ghost" href="#contact">Choose Premium</a></article>
+  </div>
+  <p style="text-align:center;color:#808a82;font-size:.8rem;margin-top:20px">Prices are indicative. Hosting, domain, paid plugins, taxes and third-party services may be extra.</p>
+</div></section>
+
+<!-- TESTIMONIALS -->
+<section class="section"><div class="wrap"><div class="center"><div class="eyebrow">The experience matters</div><h2 class="section-title">Built around clarity & trust</h2><p class="section-lead">No fabricated reviews: add verified customer feedback here when you have permission to publish it.</p></div>
+  <div class="cards">
+    <article class="card"><div class="quote">“</div><div class="stars" aria-label="Five star placeholder">★★★★★</div><h3>Client feedback goes here</h3><p>Replace this sample card with a real customer quote and approved name.</p><div class="person"><div class="avatar">01</div><div><strong>Verified client</strong><div style="font-size:.8rem;color:#879188">Business website</div></div></div></article>
+    <article class="card"><div class="quote">“</div><div class="stars" aria-label="Five star placeholder">★★★★★</div><h3>Share a real success story</h3><p>Add measurable outcomes only when they are supported by client results.</p><div class="person"><div class="avatar">02</div><div><strong>Verified client</strong><div style="font-size:.8rem;color:#879188">SEO project</div></div></div></article>
+    <article class="card"><div class="quote">“</div><div class="stars" aria-label="Five star placeholder">★★★★★</div><h3>Show what clients value</h3><p>Use this space for genuine feedback about communication and delivery.</p><div class="person"><div class="avatar">03</div><div><strong>Verified client</strong><div style="font-size:.8rem;color:#879188">Website support</div></div></div></article>
+  </div>
+</div></section>
+
+<!-- ABOUT -->
+<section class="section alt" id="about"><div class="wrap about-grid">
+  <div><svg class="founder-art" viewBox="0 0 260 260" role="img" aria-label="Illustrated founder avatar"><defs><linearGradient id="av" x2="1" y2="1"><stop stop-color="#a6ff00"/><stop offset="1" stop-color="#00e5ff"/></linearGradient></defs><circle cx="130" cy="130" r="115" fill="#111a14" stroke="#3a5620" stroke-width="2"/><circle cx="130" cy="94" r="43" fill="url(#av)" opacity=".9"/><path d="M48 218c8-52 40-78 82-78s74 26 82 78" fill="#18251b" stroke="#a6ff00" stroke-width="3"/><path d="M108 93q22 18 44 0" stroke="#10200e" stroke-width="4" fill="none" stroke-linecap="round"/><circle cx="115" cy="82" r="4" fill="#10200e"/><circle cx="145" cy="82" r="4" fill="#10200e"/></svg></div>
+  <div><div class="eyebrow">About GTS</div><h2 class="section-title">Your tech buddy, har step par.</h2><p>GTS Your Tech Buddy ka goal hai technology ko approachable banana. Chahe aapko apni first website chahiye, SEO samajhna ho, ya useful digital tools explore karne hon — yahan focus practical learning aur clear communication par hai.</p><p>Ab hamara AI chat assistant 24/7 available hai — instant guidance ke liye. Founder story, personal journey aur credentials yahan add karein, taaki visitors aapko aur aapke kaam ko behtar jaan sakein.</p><a class="btn" href="#contact">Let's connect ↗</a></div>
+</div></section>
+
+<!-- CONTACT -->
+<section class="section" id="contact"><div class="wrap"><div class="eyebrow">Let's build something</div><h2 class="section-title">DM Karo, Website Pao</h2><p class="section-lead">Apna idea share karein. Form abhi email draft open karta hai — connect a real form backend to receive submissions automatically.</p>
+  <div class="contact-grid">
+    <div class="card"><h3>Start a conversation</h3><p>Website, SEO ya collaboration ke liye message bhejein.</p><a class="btn" style="margin-top:16px" href="https://wa.me/?text=Hi%20GTS%20Your%20Tech%20Buddy%2C%20I%20want%20to%20discuss%20a%20website." target="_blank" rel="noopener">WhatsApp par message ↗</a><p style="font-size:.8rem;color:#7f8b82;margin-top:18px">Add your business WhatsApp number to make this button open your direct chat.</p></div>
+    <form class="card contact-form" id="contactForm"><label>Your name<input class="field" name="name" required placeholder="Enter your name"></label><label>Email address<input class="field" type="email" name="email" required placeholder="you@example.com"></label><label>What do you need?<select class="field" name="service"><option>Website development</option><option>SEO services</option><option>Website support</option><option>AI chatbot integration</option><option>Other / collaboration</option></select></label><label>Message<textarea class="field" name="message" required placeholder="Tell us a little about your project..."></textarea></label><button class="btn" type="submit">Prepare message ↗</button><div class="status" id="contactStatus" aria-live="polite"></div></form>
+  </div>
+</div></section>
+
+<!-- NEWSLETTER -->
+<section class="section alt" id="newsletter"><div class="wrap"><div class="newsletter"><div class="eyebrow">Stay in the loop</div><h2 class="section-title">Tech updates, straight to your inbox.</h2><p>Useful tips, tools aur new tutorials — no spam.</p><form class="newsletter-form" id="newsletterForm"><label class="sr-only" for="emailInput" style="position:absolute;left:-9999px">Email address</label><input class="field" id="emailInput" type="email" required placeholder="Enter your email address"><button class="btn" type="submit">Subscribe ↗</button></form><div class="status" id="newsletterStatus" aria-live="polite"></div><p style="font-size:.75rem;color:#78827a">Demo form: connect Mailchimp, Brevo or your own API endpoint before launch.</p></div></div></section>
+</main>
+
+<footer class="footer"><div class="wrap"><div class="footer-top"><div><img class="footer-logo" src="assets/gts-logo-full.webp" width="526" height="200" loading="lazy" alt="GTS Your Tech Buddy logo"><p style="font:600 1.35rem Caveat,cursive;color:#f5f5ed;margin:5px 0">@GTSYourTechBuddy</p></div><div><div style="font-weight:700;color:#f5f5ed;margin-bottom:12px">Follow the journey</div><div class="socials">
+  <a href="https://www.youtube.com/@GTSYourTechBuddy" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24"><path d="M22 12s0-4-1-5-4-1-9-1-8 0-9 1-1 5-1 5 0 4 1 5 4 1 9 1 8 0 9-1 1-5 1-5Z"/><path d="m10 8 5 4-5 4z"/></svg></a>
+  <a href="https://www.instagram.com/GTSYourTechBuddy/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.5 6.5h.01"/></svg></a>
+  <a href="https://www.facebook.com/" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M14 21v-8h3l.5-4H14V7c0-1.2.4-2 2-2h2V1.5C17.2 1.3 16.1 1.2 15 1.2 11.7 1.2 10 3.2 10 6.7V9H7v4h3v8z"/></svg></a>
+  <a href="https://www.threads.net/" target="_blank" rel="noopener" aria-label="Threads"><svg viewBox="0 0 24 24"><path d="M18.5 8.5c-.8-3.1-3-4.8-6.3-4.8-4.4 0-7.2 3.2-7.2 8.2 0 5 2.7 8.2 7.2 8.2 3.6 0 6-2 6-5.1 0-2.5-1.7-4.1-4.3-4.1-2.1 0-3.5 1-3.5 2.7 0 1.3 1 2.2 2.4 2.2 1.6 0 2.7-1.1 2.7-3.1 0-3.7-2-5.8-5.2-5.8"/></svg></a>
+</div></div></div><div class="copyright"><span>© <span id="year"></span> GTS Your Tech Buddy. All rights reserved.</span><span>Made with <span style="color:#a6ff00">♥</span> for curious minds.</span></div></div></footer>
+
+<!-- Mobile app bottom nav -->
+<nav class="app-nav" aria-label="App navigation">
+  <div class="app-nav-inner">
+    <a href="#home" class="active"><svg viewBox="0 0 24 24"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>Home</a>
+    <a href="#chat-app"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>Chat</a>
+    <a href="#tools"><svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>Tools</a>
+    <a href="#services"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>Services</a>
+    <a href="#contact"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>Contact</a>
+  </div>
+</nav>
+
+<!-- Floating chat FAB (mobile) -->
+<button class="chat-fab" id="chatFab" aria-label="Open chat assistant">
+  <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+  <span class="fab-badge">1</span>
+</button>
+
+<!-- Tool modal -->
+<div class="modal" id="toolModal" role="dialog" aria-modal="true" aria-labelledby="toolTitle"><div class="modal-box"><button class="close" id="closeModal" aria-label="Close">×</button><div class="eyebrow">Free browser tool</div><h3 id="toolTitle">Tool</h3><p id="toolDesc">Enter your text below.</p><textarea class="field" id="toolInput" rows="5" placeholder="Type or paste text here..."></textarea><div id="extraFields"></div><button class="btn" id="runTool" style="margin-top:14px">Run tool</button><div class="result" id="toolResult" aria-live="polite">Your result will appear here.</div></div></div>
+
+<script>
+  const $ = s => document.querySelector(s);
+
+  // ===== NAV =====
+  const menuToggle = $('#menuToggle'), navLinks = $('#navLinks');
+  menuToggle.addEventListener('click',()=>{const open=navLinks.classList.toggle('open');menuToggle.setAttribute('aria-expanded',String(open));});
+  navLinks.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{navLinks.classList.remove('open');menuToggle.setAttribute('aria-expanded','false');}));
+  $('#year').textContent = new Date().getFullYear();
+
+  // ===== CAROUSEL =====
+  const slides=$('#slides'), dots=[...$('#dots').children]; let slideIndex=0, carouselTimer;
+  function showSlide(i){slideIndex=(i+3)%3;slides.style.transform=`translateX(-${slideIndex*100}%)`;dots.forEach((d,n)=>d.classList.toggle('active',n===slideIndex));}
+  function startCarousel(){clearInterval(carouselTimer);if(!matchMedia('(prefers-reduced-motion: reduce)').matches)carouselTimer=setInterval(()=>showSlide(slideIndex+1),5500);}
+  $('#next').addEventListener('click',()=>{showSlide(slideIndex+1);startCarousel()});
+  $('#prev').addEventListener('click',()=>{showSlide(slideIndex-1);startCarousel()});
+  dots.forEach((d,i)=>d.addEventListener('click',()=>{showSlide(i);startCarousel()}));
+  $('.carousel').addEventListener('mouseenter',()=>clearInterval(carouselTimer));
+  $('.carousel').addEventListener('mouseleave',startCarousel);
+  startCarousel();
+
+  // ===== TOOLS MODAL =====
+  const modal=$('#toolModal'), input=$('#toolInput'), result=$('#toolResult'), extra=$('#extraFields'); let activeTool='words';
+  const toolInfo={
+    words:['Word Counter','Count words, characters and estimated reading time.'],
+    case:['Case Converter','Convert your text into a different letter case.'],
+    meta:['Meta Tag Helper','Draft an SEO title and meta description.'],
+    reading:['Reading Time','Estimate how long your text takes to read.']
+  };
+  document.querySelectorAll('[data-tool]').forEach(btn=>btn.addEventListener('click',()=>{
+    activeTool=btn.dataset.tool;
+    $('#toolTitle').textContent=toolInfo[activeTool][0];
+    $('#toolDesc').textContent=toolInfo[activeTool][1];
+    input.value='';
+    extra.innerHTML=activeTool==='meta'?'<input class="field" id="metaTitle" maxlength="60" placeholder="Page title (up to 60 characters)" style="margin-top:10px"><input class="field" id="metaDesc" maxlength="160" placeholder="Meta description (up to 160 characters)" style="margin-top:10px">':'';
+    result.textContent='Your result will appear here.';
+    modal.classList.add('open');
+    input.focus();
+  }));
+  function runTool(){
+    const t=input.value;
+    if(activeTool==='words'){const words=t.trim()?t.trim().split(/\s+/).length:0;result.textContent=`Words: ${words}\nCharacters: ${t.length}\nCharacters (no spaces): ${t.replace(/\s/g,'').length}\nEstimated reading time: ${Math.max(1,Math.ceil(words/200))} min`;}
+    if(activeTool==='case'){result.textContent=`UPPERCASE:\n${t.toUpperCase()}\n\nlowercase:\n${t.toLowerCase()}\n\nTitle Case:\n${t.toLowerCase().replace(/\b\w/g,c=>c.toUpperCase())}`;}
+    if(activeTool==='meta'){const title=$('#metaTitle').value, desc=$('#metaDesc').value;result.textContent=`<title>${title}</title>\n<meta name="description" content="${desc}">\n\nTitle: ${title.length}/60 characters\nDescription: ${desc.length}/160 characters`;}
+    if(activeTool==='reading'){const words=t.trim()?t.trim().split(/\s+/).length:0;result.textContent=`${words} words\nEstimated reading time: ${Math.max(1,Math.ceil(words/200))} minute(s) at 200 words per minute.`;}
+  }
+  $('#runTool').addEventListener('click',runTool);
+  $('#closeModal').addEventListener('click',()=>modal.classList.remove('open'));
+  modal.addEventListener('click',e=>{if(e.target===modal)modal.classList.remove('open')});
+  document.addEventListener('keydown',e=>{if(e.key==='Escape')modal.classList.remove('open')});
+
+  // ===== CONTACT FORM =====
+  $('#contactForm').addEventListener('submit',e=>{
+    e.preventDefault();
+    const d=new FormData(e.currentTarget);
+    const subject=encodeURIComponent('Website enquiry from '+d.get('name'));
+    const body=encodeURIComponent(`Name: ${d.get('name')}\nEmail: ${d.get('email')}\nService: ${d.get('service')}\n\n${d.get('message')}`);
+    $('#contactStatus').textContent='Opening your email app with the enquiry draft…';
+    location.href=`mailto:?subject=${subject}&body=${body}`;
+  });
+  $('#newsletterForm').addEventListener('submit',e=>{
+    e.preventDefault();
+    $('#newsletterStatus').textContent='Thanks! Connect an email marketing provider to save subscriptions.';
+  });
+
+  // ===== AI CHATBOT =====
+  const chatMessages = $('#chatMessages');
+  const chatInput = $('#chatInput');
+  const chatSend = $('#chatSend');
+  const quickActions = $('#quickActions');
+  const chatFab = $('#chatFab');
+  const chatWindow = $('#chatWindow');
+
+  // Knowledge base — keyword-based smart replies
+  const knowledgeBase = [
+    {
+      keywords: ['website', 'banwani', 'banwana', 'banwana', 'site', 'web', 'develop', 'development', 'build', 'banao', 'banwao', 'portfolio'],
+      reply: `🌐 **Website Development**\n\nGTS aapke liye responsive, fast aur SEO-friendly website bana sakta hai. Packages:\n\n• **Basic** — ₹4,999 (3 pages, contact section, basic SEO)\n• **Business** — ₹9,999 (5 pages, custom design, speed optimization, AI chatbot)\n• **Premium** — ₹14,999 (8 pages, blog, advanced SEO + automation)\n\nStarting point ke liye "Choose Business" ya contact form fill karein. Kya aap business, portfolio ya personal site chahte hain?`
+    },
+    {
+      keywords: ['seo', 'search', 'google', 'rank', 'ranking', 'visibility', 'keyword', 'traffic', 'optimize'],
+      reply: `📈 **SEO Tips (Practical)**\n\n1. **Title tag** — 60 characters, target keyword include karein\n2. **Meta description** — 155–160 chars, click-worthy\n3. **Headings** — H1 ek hi, H2/H3 se structure\n4. **Mobile-friendly** — Google mobile-first index karta hai\n5. **Speed** — images compress karein, lazy load use karein\n6. **Internal linking** — related pages ko connect karein\n\nGTS ka **Meta Tag Helper** tool try karein (Tools section mein). Ya poochhiye: "SEO audit kaise karun?"`
+    },
+    {
+      keywords: ['tool', 'tools', 'free', 'word counter', 'case converter', 'meta tag', 'reading time', 'utility'],
+      reply: `🛠️ **Free Browser Tools**\n\nYeh sab tools aapke browser mein hi chalte hain — koi data upload nahi hota:\n\n• **Word Counter** — words, characters, reading time\n• **Case Converter** — UPPERCASE / lowercase / Title Case\n• **Meta Tag Helper** — SEO title + description draft\n• **Reading Time** — article ka estimated time\n\nTools section mein jaakar "Open tool" click karein. Koi specific tool chahiye jo abhi nahi hai? Bataiye!`
+    },
+    {
+      keywords: ['price', 'pricing', 'cost', 'kitna', 'rate', 'charge', 'package', 'plan', 'budget', 'fees'],
+      reply: `💰 **Website Packages**\n\n• **Basic — ₹4,999** — 3 pages, responsive, basic SEO\n• **Business — ₹9,999** — 5 pages, custom design, AI chatbot, speed optimization\n• **Premium — ₹14,999** — 8 pages, blog, advanced SEO, automation, priority support\n\nNote: Hosting, domain aur taxes alag se. Exact quote ke liye contact form fill karein ya WhatsApp par message karein.`
+    },
+    {
+      keywords: ['chatbot', 'ai', 'bot', 'assistant', 'gts ai', 'smart'],
+      reply: `🤖 **GTS AI Chatbot**\n\nMain ek AI assistant hoon jo aapko tech, website, SEO aur tools mein help karta hoon — 24/7, free!\n\nAap poochh sakte hain:\n• "Website kaise banwaun?"\n• "SEO improve kaise karun?"\n• "Kaunsa tool use karun?"\n• "Pricing batao"\n\nBusiness package (₹9,999) mein aapki website par bhi AI chatbot integrate kar sakte hain. Kya aap apni site par chatbot chahte hain?`
+    },
+    {
+      keywords: ['contact', 'whatsapp', 'email', 'message', 'hire', 'talk', 'discuss', 'consult', 'baat'],
+      reply: `📞 **Contact GTS**\n\n• **WhatsApp** — contact section mein "WhatsApp par message" button\n• **Email form** — contact form fill karein, email draft khul jayega\n• **Social** — YouTube, Instagram, Facebook, Threads (@GTSYourTechBuddy)\n\nAap kya discuss karna chahte hain — website, SEO, ya kuch aur?`
+    },
+    {
+      keywords: ['hello', 'hi', 'hey', 'namaste', 'namaskar', 'salam', 'good morning', 'good evening', 'kya haal'],
+      reply: `Namaste! 🙏 Main GTS AI Buddy hoon. Aap kaise hain?\n\nWebsite, SEO, tools ya kisi bhi tech topic par poochhiye — main help karunga. Neeche quick buttons bhi hain try karne ke liye!`
+    },
+    {
+      keywords: ['thanks', 'thank', 'shukriya', 'dhanyavad', 'great', 'awesome', 'helpful', 'good'],
+      reply: `Aapka swagat hai! 😊 Agar aur koi sawaal ho toh bataiye. GTS hamesha help ke liye ready hai — tech seekhna ab easy hai! 🚀`
+    },
+    {
+      keywords: ['hosting', 'domain', 'server', 'godaddy', 'namecheap', 'hostinger'],
+      reply: `🖥️ **Domain & Hosting Basics**\n\n• **Domain** — Namecheap, GoDaddy ya Google Domains se lein (.com ~₹800–1200/year)\n• **Hosting** — Hostinger, SiteGround, ya Vercel (static sites ke liye free)\n• **SSL** — Let's Encrypt free SSL use karein (HTTPS ke liye zaroori)\n• **Email** — Zoho Mail free plan ya Google Workspace\n\nGTS website package mein hosting setup guide included hai. Specific sawaal? Poochhiye!`
+    },
+    {
+      keywords: ['speed', 'fast', 'performance', 'lighthouse', 'core web vitals', 'slow'],
+      reply: `⚡ **Website Speed Tips**\n\n1. **Images compress** karein — WebP format use karein\n2. **Lazy loading** — offscreen images ke liye\n3. **Minify** CSS/JS\n4. **CDN** use karein (Cloudflare free)\n5. **Caching** enable karein\n6. **Fonts** — sirf zaroori weights load karein\n\nGTS ka Business package speed optimization pass include karta hai. Lighthouse score check karne ke liye Chrome DevTools → Lighthouse use karein.`
+    },
+    {
+      keywords: ['blog', 'article', 'content', 'write', 'tutorial', 'learn', 'seekhna', 'sikha'],
+      reply: `📝 **Blog & Learning**\n\nGTS blog par practical tech tips milte hain:\n• "Business website banane se pehle 5 baatein"\n• "SEO-friendly page kaise banayein"\n• "AI chatbot se daily work kaise easy karein"\n\nBlog section check karein. Koi specific topic par article chahiye? Bataiye, main guide karunga!`
+    },
+    {
+      keywords: ['design', 'ui', 'ux', 'layout', 'color', 'branding', 'logo'],
+      reply: `🎨 **Design & UI Tips**\n\n• **Color palette** — 2-3 colors max, consistent rakhein\n• **Typography** — 1-2 fonts (heading + body)\n• **White space** — content ko breathe karein\n• **Mobile-first** — pehle mobile layout socho\n• **Contrast** — accessibility ke liye 4.5:1 ratio\n\nGTS custom design packages mein brand colors aur style guide include hai. Apna brand style share karein, main aur specific suggest karunga!`
+    }
+  ];
+
+  // Fallback responses
+  const fallbacks = [
+    `Hmm, is baare mein mujhe exact info nahi hai. Par main GTS AI Buddy hoon — website, SEO, tools, pricing ya chatbot ke baare mein poochhiye, main help karunga!\n\nAap yeh try kar sakte hain:\n• "Website banwani hai"\n• "SEO tips batao"\n• "Pricing kya hai?"`,
+    `Yeh sawaal thoda specific hai. Main tech, website, SEO aur GTS services par best help kar sakta hoon. Kya aap apna sawaal thoda simple kar sakte hain? Ya contact form se human team se baat karein.\n\nTry: "Free tools kaise use karun?" ya "Business package mein kya hai?"`,
+    `Main abhi is topic par sure nahi hoon. GTS AI Buddy ke paas website, SEO, free tools, pricing aur chatbot features ki knowledge hai. Kripya in topics mein se kuch poochhiye — ya "Contact" section mein team se baat karein! 😊`
+  ];
+
+  let fallbackIndex = 0;
+  let isTyping = false;
+
+  // Add message to chat
+  function addMessage(text, sender = 'bot') {
+    const div = document.createElement('div');
+    div.className = `msg ${sender}`;
+    const label = sender === 'bot' ? 'GTS AI' : 'You';
+    div.innerHTML = `<div class="msg-label">${label}</div>${text.replace(/\n/g, '<br>')}`;
+    chatMessages.appendChild(div);
+    chatMessages.scrollTop = chatMessages.scrollHeight;
+  }
+
+  // Show typing indicator
+  function showTyping() {
+    isTyping = true;
+    const typing = document.createElement('div');
+    typing.className = 'typing-indicator';
+    typing.id = 'typingIndicator';
+    typing.innerHTML = '<span></span><span></span><span></span>';
+    chatMessages.appendChild(typing);
+    chatMessages.scrollTop = chatMessages.scrollHeight;
+  }
+
+  function hideTyping() {
+    isTyping = false;
+    const el = $('#typingIndicator');
+    if (el) el.remove();
+  }
+
+  // Get bot response
+  function getBotReply(userText) {
+    const lower = userText.toLowerCase();
+    for (const entry of knowledgeBase) {
+      if (entry.keywords.some(kw => lower.includes(kw))) {
+        return entry.reply;
+      }
+    }
+    // Fallback
+    const reply = fallbacks[fallbackIndex % fallbacks.length];
+    fallbackIndex++;
+    return reply;
+  }
+
+  // Send message flow
+  function sendMessage(text) {
+    if (!text.trim() || isTyping) return;
+    addMessage(text, 'user');
+    chatInput.value = '';
+    chatInput.style.height = 'auto';
+    showTyping();
+
+    // Simulate thinking delay
+    const delay = 600 + Math.random() * 900;
+    setTimeout(() => {
+      hideTyping();
+      const reply = getBotReply(text);
+      addMessage(reply, 'bot');
+    }, delay);
+  }
+
+  // Event listeners
+  chatSend.addEventListener('click', () => sendMessage(chatInput.value));
+
+  chatInput.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' && !e.shiftKey) {
+      e.preventDefault();
+      sendMessage(chatInput.value);
+    }
+  });
+
+  // Auto-resize textarea
+  chatInput.addEventListener('input', () => {
+    chatInput.style.height = 'auto';
+    chatInput.style.height = Math.min(chatInput.scrollHeight, 100) + 'px';
+  });
+
+  // Quick action chips
+  document.querySelectorAll('[data-quick]').forEach(chip => {
+    chip.addEventListener('click', () => {
+      const map = {
+        website: 'Website banwani hai, kaise start karun?',
+        seo: 'SEO kaise improve karun apni website ka?',
+        tools: 'Free tools batao jo use kar sakta hoon',
+        pricing: 'Pricing kya hai website banwane ki?'
+      };
+      const q = map[chip.dataset.quick] || chip.textContent;
+      sendMessage(q);
+    });
+  });
+
+  // Chat FAB (mobile) — scroll to chat
+  chatFab.addEventListener('click', () => {
+    document.getElementById('chat-app').scrollIntoView({ behavior: 'smooth' });
+    setTimeout(() => chatInput.focus(), 600);
+  });
+
+  // Highlight active bottom nav on scroll
+  const sections = document.querySelectorAll('section[id]');
+  const appNavLinks = document.querySelectorAll('.app-nav a');
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(s => {
+      const top = s.offsetTop - 120;
+      if (window.scrollY >= top) current = s.id;
+    });
+    appNavLinks.forEach(a => {
+      a.classList.toggle('active', a.getAttribute('href') === '#' + current);
+    });
+  });
+
+  // Welcome message on first chat interaction (optional)
+  let hasInteracted = false;
+  chatInput.addEventListener('focus', () => {
+    if (!hasInteracted) {
+      hasInteracted = true;
+      // Could add a subtle nudge here, but the initial greeting is already there
+    }
+  }, { once: true });
+</script>
+</body>
+</html>
